@@ -79,7 +79,11 @@ int isBinary(const char *input) {
 }
 
 void clear_console() {
-	system("clear");
+	#ifdef _WIN32
+    	system("cls");
+    	#else
+        system("clear");
+    	#endif
 }
 
 
@@ -94,6 +98,13 @@ void end() {
 	clear_console();
 	printf("Merci d'avoir utilisC) ce mini-programme ! \n");
 	printf("!--Antoin9-e--!");
+}
+
+void menu_return() {
+	printf("---------------------------------------------------\n");
+	printf("1-Fermer le programme\n");
+	printf("2-Retourner au menu\n");
+
 }
 
 void first_mode() {
@@ -129,12 +140,7 @@ void second_mode() {
 	menu_return();
 }
 
-void menu_return() {
-	printf("---------------------------------------------------\n");
-	printf("1-Fermer le programme\n");
-	printf("2-Retourner au menu\n");
 
-}
 
 
 int main() {
